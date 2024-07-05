@@ -15,13 +15,13 @@ import java.net.InetAddress;
 @Service
 public class VisitorService {
 
-        private DatabaseReader dbReader;
+    private DatabaseReader dbReader;
 
     @PostConstruct
     public void init() throws IOException {
         InputStream database = getClass().getClassLoader().getResourceAsStream("GeoLite2-City.mmdb");
         if (database == null) {
-            throw new IOException("GeoLite2-City.mmdb database file not found");
+            throw new IOException("Database file not found");
         }
         dbReader = new DatabaseReader.Builder(database).build();
     }
@@ -36,7 +36,7 @@ public class VisitorService {
             return response.getCity().getName();
         } catch (IOException | GeoIp2Exception e) {
             e.printStackTrace();
-            return "Unknown";
+            return "City not found";
         }
     }
     }
