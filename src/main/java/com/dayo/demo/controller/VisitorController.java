@@ -26,12 +26,6 @@ public class VisitorController {
     private RestTemplate restTemplate;
 
 
-    @GetMapping("/api")
-    public String sayHello(){
-
-        return "SayHello";
-    }
-
     @GetMapping("/api/hello")
     public Map<String, String> greetVisitor(@RequestParam String visitor_name, HttpServletRequest request) {
 
