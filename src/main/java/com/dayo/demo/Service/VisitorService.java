@@ -28,7 +28,7 @@ public class VisitorService {
 
     public String getCity(InetAddress ipAddress) {
         if (ipAddress.isLoopbackAddress()) {
-            return "Localhost";
+            return "Couldn't get city";
         }
 
         try {
