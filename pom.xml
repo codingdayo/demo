@@ -28,6 +28,8 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -86,6 +88,7 @@
 
 
 		</plugins>
+
 		<finalName>spring-boot-docker</finalName>
 	</build>
 
